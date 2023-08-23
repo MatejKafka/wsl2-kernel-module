@@ -1,8 +1,6 @@
-# WSL2 Linux kernel module development sample
+# WSL2 Linux kernel module development setup
 
 A small project to setup a Debian/Ubuntu-based WSL2 instance for Linux kernel module development.
-
-
 
 ## Why is this necessary?
 
@@ -12,12 +10,12 @@ With WSL2, the issue is that the WSL kernel is shared between all WSL2 instances
 
 To compile kernel modules for the WSL2 kernel, we will need to download and build the correct kernel version ourselves.
 
-
-
 ## Usage
 
-1. Clone this repository:
+1. Clone this repository into your WSL home directory (note that you should NOT use a directory on your Windows partition):
   ```sh
+  wsl # switch to WSL
+  cd ~ # move to the home directory INSIDE the WSL filesystem
   git clone github.com/MatejKafka/wsl2-kernel-module
   ```
 
