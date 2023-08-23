@@ -1,0 +1,5 @@
+/WSL2-Linux-Kernel/
+
+/first_module/*
+!/first_module/Makefile
+!/first_module/first_module.c
