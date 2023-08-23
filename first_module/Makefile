@@ -1,5 +1,6 @@
 include ../vars.mk
 
+KBUILD = $(MAKE) -C "$(KERNEL_DIR)" M=$(CURDIR)
 MODULE_NAME = first_module
 # used by Kbuild
 obj-m += $(MODULE_NAME).o
@@ -11,7 +12,7 @@ all: build
 
 ## build the module using KBuild
 build:
-	$(MAKE) -C "$(KERNEL_DIR)" M=$(PWD) modules
+	$(KBUILD) modules
 
 ## load the module
 load: build
@@ -24,4 +25,4 @@ unload:
 	rmmod "$(MODULE_NAME)"
 
 clean:
-	$(MAKE) -C "$(KERNEL_DIR)" M=$(PWD) clean
+	$(KBUILD) clean
