@@ -3,3 +3,7 @@
 /first_module/*
 !/first_module/Makefile
 !/first_module/first_module.c
+
+/character_device/*
+!/character_device/Makefile
+!/character_device/character_device.c
