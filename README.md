@@ -25,13 +25,12 @@ To compile kernel modules for the WSL2 kernel, we will need to download and buil
   make
   ```
 
-3. Compile the "hello world" kernel module:
+3. Compile the "hello world" `first_module`:
   ```sh
-  cd first_module
   # compile and load the module
-  make load
+  make -C first_module load
   # unload it
-  make unload
+  make -C first_module unload
   ```
 
 4. Check that the module was correctly loaded and unloaded:
