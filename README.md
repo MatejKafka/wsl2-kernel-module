@@ -1,6 +1,6 @@
 # WSL2 Linux kernel module development setup
 
-A small project to setup a Debian/Ubuntu-based WSL2 instance for Linux kernel module development.
+A small example project to setup a Debian/Ubuntu-based WSL2 instance for Linux kernel module development.
 
 ## Why is this necessary?
 
@@ -42,3 +42,13 @@ To compile kernel modules for the WSL2 kernel, we will need to download and buil
   # [ 1290.261435] first_module: module loaded
   # [ 1290.267202] first_module: unloading module
   ```
+
+### Adding new modules
+
+To create a new kernel module:
+
+1) Add a new subdirectory.
+2) Copy the `Makefile` from `first_module`.
+3) Modify the `MODULE_NAME` variable in the `Makefile` to match the subdirectory name
+4) Create a new `.c` file with the filename matching `MODULE_NAME`.
+5) Compile and load the module by running `make -C <dirname> load`.
